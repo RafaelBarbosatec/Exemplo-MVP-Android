@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detalhe_book"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rafael.mpvexemplo.DetalheBook.DetalheBookActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_detalhe_books"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:elevation="4dp">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/container_frag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_detalhe_books"/>
+
+</RelativeLayout>
