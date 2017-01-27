@@ -12,23 +12,13 @@ public interface DetalheBookContract {
 
     interface View {
 
-        void setProgressIndicator(boolean active);
-
-        void showMissingNote();
-
-        void hideTitle();
 
         void showTitle(String title);
 
         void showImage(String imageUrl);
 
-        void hideImage();
-
         void showData(String data);
 
-        void hideData();
-
-        void hideDescription();
 
         void showDescription(String description);
     }

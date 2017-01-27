@@ -73,20 +73,6 @@ public class DetalheBookFragment extends Fragment implements DetalheBookContract
         }
     }
 
-    @Override
-    public void setProgressIndicator(boolean active) {
-
-    }
-
-    @Override
-    public void showMissingNote() {
-
-    }
-
-    @Override
-    public void hideTitle() {
-        tv_titulo.setVisibility(View.INVISIBLE);
-    }
 
     @Override
     public void showTitle(String title) {
@@ -103,10 +89,6 @@ public class DetalheBookFragment extends Fragment implements DetalheBookContract
                 into(img_book);
     }
 
-    @Override
-    public void hideImage() {
-        img_book.setVisibility(View.INVISIBLE);
-    }
 
     @Override
     public void showData(String data) {
@@ -114,15 +96,6 @@ public class DetalheBookFragment extends Fragment implements DetalheBookContract
         tv_data.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    public void hideData() {
-        tv_data.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
-    public void hideDescription() {
-        tv_desc.setVisibility(View.INVISIBLE);
-    }
 
     @Override
     public void showDescription(String description) {

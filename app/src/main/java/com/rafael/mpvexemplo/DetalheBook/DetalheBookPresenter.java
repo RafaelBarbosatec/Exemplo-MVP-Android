@@ -21,26 +21,18 @@ public class DetalheBookPresenter implements DetalheBookContract.UserActionsList
 
         if (book.getData() != null && !book.getData().equals("")) {
             bookDetalheView.showData(book.getData());
-        }else{
-            bookDetalheView.hideData();
         }
 
         if (book.getDescricao() != null && !book.getDescricao().equals("")) {
             bookDetalheView.showDescription(book.getDescricao());
-        }else {
-
         }
 
         if (book.getNome() != null && !book.getNome().equals("")) {
             bookDetalheView.showTitle(book.getNome());
-        }else {
-
         }
 
         if (book.getImg() != null && !book.getImg().equals("")) {
             bookDetalheView.showImage(book.getImg());
-        }else {
-
         }
 
     }
