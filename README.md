@@ -1,7 +1,9 @@
 # Exemplo MVP no Android
 
-![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)
+<img src="https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/print1.png" width="400">
+<img src="https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/print2.png" width="400">
 
+## MVP
 O padrão MVP tem a finalidade de separar a camada de apresentação das camadas de dados e regras de negócio. Vamos falar um pouco sobre sua composição.
 
 **Model–view–presenter (MVP)** é uma derivação do padrão de software model-view-controller (MVC), usado também para construir principalmente interfaces gráficas.(WIKIPEDIA, 2016)
@@ -10,8 +12,7 @@ Em MVP a camada Presenter assume a função de mediadora (executada pelo Control
 
 Ele é dividido em três partes bem distintas com responsabilidades específicas, são elas o Model, View e Presenter, como ilustrado abaixo:
 
-![N|Solid](https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/MVP.png)
-<img src="https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/MVP.png" width="48">
+<img src="https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/MVP.png" width="400">
 
 ## Como implementar?
 Essa questão é bastante discutida entre a comunidade. Existe muitas divergências sobre a melhor maneira de implementálo e como adapta-lo ao nosso ambiente Android. Ele pode variar de acordo com a responsabilidade que o Presenter contem. Esse exemplo que implementei foi baseado na implementação disponibilizada pela google em seu [Codelab](https://codelabs.developers.google.com/codelabs/android-testing/index.html#0). Que incluse ensina juntamente a implementar diversos testes. Mas de qualquer forma, a definição das partes do MVP não é alterado:
