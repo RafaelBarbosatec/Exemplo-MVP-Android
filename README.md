@@ -10,7 +10,7 @@ Em MVP a camada Presenter assume a função de mediadora (executada pelo Control
 
 Ele é dividido em três partes bem distintas com responsabilidades específicas, são elas o Model, View e Presenter, como ilustrado abaixo:
 
-![N|Solid](https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/MVP.png)
+![N|Solid](https://github.com/RafaelBarbosatec/Exemplo-MVP-Android/blob/master/imagens/MVP.png = 250x250)
 
 ## Como implementar?
 Essa questão é bastante discutida entre a comunidade. Existe muitas divergências sobre a melhor maneira de implementálo e como adapta-lo ao nosso ambiente Android. Ele pode variar de acordo com a responsabilidade que o Presenter contem. Esse exemplo que implementei foi baseado na implementação disponibilizada pela google em seu [Codelab](https://codelabs.developers.google.com/codelabs/android-testing/index.html#0). Que incluse ensina juntamente a implementar diversos testes. Mas de qualquer forma, a definição das partes do MVP não é alterado:
