@@ -26,12 +26,6 @@ public class CustomJsonObjectRequest extends Request<JSONObject> {
         this.response=response;
     }
 
-    public CustomJsonObjectRequest( String url, Map<String,String> params,Response.Listener<JSONObject> response, Response.ErrorListener listener) {
-        super(Method.GET, url, listener);
-        this.params=params;
-        this.response=response;
-    }
-
     public  Map<String,String> getParams() throws AuthFailureError{
         return  params;
     }

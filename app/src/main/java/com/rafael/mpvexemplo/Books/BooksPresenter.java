@@ -7,6 +7,7 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
+import com.rafael.mpvexemplo.model.ResponseBooks;
 import com.rafael.mpvexemplo.util_conection.TentarNovamente;
 import com.rafael.mpvexemplo.util_conection.TestarConexao;
 import com.rafael.mpvexemplo.model.Book;
@@ -31,7 +32,6 @@ public class BooksPresenter implements ResponseConnection, BooksContract.UserAct
     private String url = "";
     private BooksContract.View booksView;
     private Activity activity;
-    private Gson gson;
     private boolean isUpdate, carregando = false, existNextPage = true;
     private int pagina = 0;
 
@@ -39,7 +39,6 @@ public class BooksPresenter implements ResponseConnection, BooksContract.UserAct
 
         this.activity = activity;
         this.booksView = booksView;
-        gson = new Gson();
     }
 
     @Override
@@ -62,7 +61,7 @@ public class BooksPresenter implements ResponseConnection, BooksContract.UserAct
 
             carregando = true;
 
-            NetworkConnection.getInstance(activity).conectionVolley(this, url, Request.Method.GET);
+            NetworkConnection.getInstance(activity, ResponseBooks.class).conectionVolley(this, url, Request.Method.GET);
         }
 
     }
@@ -78,35 +77,17 @@ public class BooksPresenter implements ResponseConnection, BooksContract.UserAct
         return null;
     }
 
+
     @Override
-    public void doAfter(JSONObject jsonObject) {
+    public void doAfter(Object object) {
+      ResponseBooks responseBooks = (ResponseBooks)object;
 
-        try {
-            if (!jsonObject.getBoolean("erro")) {
-
-                JSONArray books = jsonObject.getJSONArray("data");
-                existNextPage = jsonObject.getBoolean("existNexPage");
-
-                Book[] book_array = gson.fromJson(books.toString(), Book[].class);
-                List<Book> listBooks = new ArrayList<>();
-
-                for (Book b : book_array){
-                    listBooks.add(b);
-                }
-
-                if (isUpdate) {
-
-                    booksView.showBooks(listBooks);
-
-                }else{
-
-                    booksView.moreBooks(listBooks);
-
-                }
+        if (!responseBooks.isErro()) {
+            if (isUpdate) {
+                booksView.showBooks(responseBooks.getData());
+            }else{
+                booksView.moreBooks(responseBooks.getData());
             }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
 
         carregando = false;
@@ -129,7 +110,7 @@ public class BooksPresenter implements ResponseConnection, BooksContract.UserAct
                 booksView.setProgressIndicator(true);
 
             carregando = true;
-            NetworkConnection.getInstance(activity).conectionVolley(this, url, Request.Method.GET);
+            NetworkConnection.getInstance(activity,ResponseBooks.class).conectionVolley(this, url, Request.Method.GET);
         }
     }
 }

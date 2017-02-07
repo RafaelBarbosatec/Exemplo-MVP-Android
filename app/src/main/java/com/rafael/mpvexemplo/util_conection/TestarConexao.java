@@ -4,7 +4,12 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.design.widget.BaseTransientBottomBar;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
+
+import com.rafael.mpvexemplo.R;
 
 public class TestarConexao {
 
@@ -26,7 +31,16 @@ public class TestarConexao {
 
 	public static void calldialog(final Activity c,final TentarNovamente t) {
 
-		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(c);
+		Snackbar.make(c.findViewById(R.id.lay_main)
+				,c.getString(R.string.txt_erro_conexao)
+				, BaseTransientBottomBar.LENGTH_INDEFINITE)
+				.setAction("TENTAR NOVAMENTE", new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						t.tentarNovamente();
+					}
+				}).show();
+		/*final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(c);
 		alertDialogBuilder.setTitle("");
 		alertDialogBuilder.setMessage("Ops, ocorreu algum erro na comunicação, verifique sua conexão e tente novamente.");
 		alertDialogBuilder.setPositiveButton("TENTAR NOVAMENTE", new DialogInterface.OnClickListener() {
@@ -38,7 +52,7 @@ public class TestarConexao {
 
 
 		//AlertDialog alertDialog = alertDialogBuilder.create();
-		alertDialogBuilder.show();
+		alertDialogBuilder.show();*/
 	}
 
 

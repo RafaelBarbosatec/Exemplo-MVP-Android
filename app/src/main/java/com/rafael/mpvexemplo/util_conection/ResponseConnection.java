@@ -13,7 +13,7 @@ public interface ResponseConnection {
 
     Map<String,String> doBefore();
 
-    void doAfter(JSONObject jsonObject);
+    void doAfter(Object object);
 
     void erroServer(VolleyError error);
 }
